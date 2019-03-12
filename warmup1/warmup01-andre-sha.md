@@ -1,0 +1,96 @@
+warmup01-andre-sha.Rmd
+================
+Andre Sha
+1/31/2019
+
+Star Wars
+=========
+
+------------------------------------------------------------------------
+
+### [Papanoida](https://starwars.fandom.com/wiki/Papanoida)
+
+![](https://vignette.wikia.nocookie.net/starwars/images/f/f4/Papanoida_body_shot.png/revision/latest?cb=20121204003921)
+
+A famous quote by Papanoida:
+
+> "My father's a powerful man. If you hurt me or my sister, you'll be dead!"
+
+| Description |    Value    |
+|-------------|:-----------:|
+| Homeworld   |   Pantora   |
+| Species     |   Pantoran  |
+| Gender      |     Male    |
+| Height      | 1.77 meters |
+| Hair color  |    White    |
+
+Smitten Kitchen
+===============
+
+------------------------------------------------------------------------
+
+### [Click here to check out *Smitten Kitchen* for Great Food!](https://smittenkitchen.com)
+
+![Cozy Cabbage and Farro Soup](https://smittenkitchendotcom.files.wordpress.com/2019/01/cozy-cabbage-and-farro-soup.jpg?w=1500)
+
+#### Ingredients:
+
+-   1 pound cabbage, savoy or green
+-   Olive oil
+-   1 medium onion, thinly sliced
+-   Kosher salt and freshly ground black pepper
+-   3 garlic cloves, smashed and peeled
+-   1 sprig of rosemary or thyme
+-   1 tablespoon red wine
+-   2/3 cup uncooked farro
+-   About 4 cups homemade or storebought chicken broth
+-   1 tablespoon fresh lemon juice Shaved parmesan, to finish
+
+#### Special Kitchen Tools Needed:
+
+-   Cheese Grater
+-   Vegetable Peeler for Cabbage
+-   Small Skillet
+-   Large Pot or Dutch Oven
+
+#### How to Prepare:
+
+1.  Cut out the cabbage and finely chop it.
+    ***Optional***: You can choose to cut the leaves into 1/8 inch ribbons.
+2.  Heat 1/4 cup olive oil in a large pot or Dutch oven over medium heat.
+3.  Add onion and cabbage core.
+4.  Season with some salt and pepper.
+5.  Stir frequently for about 5-7 minutes.
+6.  Add the garlic and cook for another 3-5 minutes.
+7.  Add the cabbage leaves and reduce the heat to medium-low.
+8.  Cook, covered, until the cabbage is very sweet and tender (30 minutes)
+9.  Meanwhile, in a small skillet, add olive oil over medium and add farro.
+    ***Note***: Toast and stir the farro for a few minutes until it turns half a shade darker.
+10. When the cabbage is ready, stir in the vinegar. Taste and season with more salt & pepper.
+11. Add toasted farrow and broth.
+12. Bring mixture to a **lazy** simmer and cook for 25-35 minutes, until farro is tender and the flavors are **married**.
+
+#### Final Thoughts:
+
+The reason why this soup is called the **cozy** cabbage and farro soup is because it warms the soul. Even though the soup is very brown and beige and is not very appealing, the taste exceeds all of a person's soup hopes and dreams. This is the exact soup to finish off a cold winter.
+
+The ingredients make up to 4 portions. <br> If you are vegetarian, you can use vegetable stock instead of chicken. <br> You could also use rice instead of farro. <br> If you want to add more protein to this dish, use ham hock or beef shank. <br> White wine vinegar can replace the teaspoon of red wine.<br>
+
+[Euclidean Distance](https://en.wikipedia.org/wiki/Euclidean_distance)
+======================================================================
+
+------------------------------------------------------------------------
+
+### Definition
+
+------------------------------------------------------------------------
+
+The **Euclidean distance** between points **p** and **q** is the length of the line segment connecting them $\\overline{\\textbf{pq}}$.
+
+In Cartesian coordinates, if **p** = (*p*<sub>1</sub>, *p*<sub>2</sub>, ..., *p*<sub>*n*</sub>) and **q** = (*q*<sub>1</sub>, *q*<sub>2</sub>, ..., *q*<sub>*n*</sub>) are two points in Euclidean n-space, then the distance (d) from **p** to **q**, or from **q** to **p** is given by the Pythagorean formula:
+
+*d*(**p, q**) = *d*(**q, p**)= $\\sqrt{(q\_{1} - p\_{1})^2 + (q\_{2} - p\_{2})^2+ ... + (q\_{n}-p\_{n})^2)}$ =
+
+$\\sqrt{\\sum\_{i=1}^n (q\_i - p\_i)^2}$.
+
+The position of a point in a Euclidean *n*-space is a Euclidean vector. So, **p** and **q** may be represented as Euclidean vectors, starting from the origin of the space (initial point) with their tips (terminal points) ending at the two points. The Euclidean norm, or Euclidean length, or magnitude of a vector measures the length of the vector: <br> $\\|\\textbf p\\|= \\sqrt{p\_{1}^2 + p\_{2}^2+ ... + p\_{n}^2} = \\sqrt{\\textbf{p.p}}$, <br> where the last expression involves the dot product.

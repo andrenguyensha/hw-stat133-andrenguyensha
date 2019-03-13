@@ -34,29 +34,59 @@ allplayers <- read.csv('../data/shots-data.csv', stringsAsFactors = FALSE, colCl
 ```
 
 ``` r
-andre <- allplayers[allplayers$name=="Andre Iguodala",]
-draymond <- allplayers[allplayers$name == "Draymond Green",]
-kevin <- allplayers[allplayers$name == "Kevin Durant",]
-klay <- allplayers[allplayers$name == "Klay Thompson",]
-stephen <- allplayers[allplayers$name == "Stephen Curry",]
+twopointers <- allplayers[allplayers$shot_type == "2PT Field Goal", ]
+threepointers <- allplayers[allplayers$shot_type == "3PT Field Goal", ]
+#n() is the number of observations in the group
+
+twopointers %>%
+  group_by(name) %>%
+  summarise(total = n(),
+            made = sum(shot_made_flag=="shot yes")) %>%
+  mutate(perc_made = made/total) %>%
+  arrange(desc(perc_made))
 ```
+
+    ## # A tibble: 5 x 4
+    ##   name           total  made perc_made
+    ##   <chr>          <int> <int>     <dbl>
+    ## 1 Andre Iguodala   210   134     0.638
+    ## 2 Kevin Durant     643   390     0.607
+    ## 3 Stephen Curry    563   304     0.540
+    ## 4 Klay Thompson    640   329     0.514
+    ## 5 Draymond Green   346   171     0.494
 
 ``` r
-twopointers <- allplayers[allplayers$shot_type=="2PT Field Goal", ]
-threepointers <- allplayers[allplayers$shot_type=="3PT Field Goal", ]
-
-twopointnames <- group_by(twopointers, name)
-
-total <- length(allplayers$shot_made_flag)
-
-summarise(twopointnames, total)
+threepointers %>%
+  group_by(name) %>%
+  summarise(total = n(),
+            made = sum(shot_made_flag=="shot yes")) %>%
+  mutate(perc_made = made/total) %>%
+  arrange(desc(perc_made))
 ```
 
-    ## # A tibble: 5 x 2
-    ##   name           total
-    ##   <chr>          <int>
-    ## 1 Andre Iguodala  4334
-    ## 2 Draymond Green  4334
-    ## 3 Kevin Durant    4334
-    ## 4 Klay Thompson   4334
-    ## 5 Stephen Curry   4334
+    ## # A tibble: 5 x 4
+    ##   name           total  made perc_made
+    ##   <chr>          <int> <int>     <dbl>
+    ## 1 Klay Thompson    580   246     0.424
+    ## 2 Stephen Curry    687   280     0.408
+    ## 3 Kevin Durant     272   105     0.386
+    ## 4 Andre Iguodala   161    58     0.360
+    ## 5 Draymond Green   232    74     0.319
+
+``` r
+allplayers %>%
+  group_by(name) %>%
+  summarise(total = n(),
+            made = sum(shot_made_flag=="shot yes")) %>%
+  mutate(perc_made = made/total) %>%
+  arrange(desc(perc_made))
+```
+
+    ## # A tibble: 5 x 4
+    ##   name           total  made perc_made
+    ##   <chr>          <int> <int>     <dbl>
+    ## 1 Kevin Durant     915   495     0.541
+    ## 2 Andre Iguodala   371   192     0.518
+    ## 3 Klay Thompson   1220   575     0.471
+    ## 4 Stephen Curry   1250   584     0.467
+    ## 5 Draymond Green   578   245     0.424

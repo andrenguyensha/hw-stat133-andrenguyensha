@@ -26,30 +26,36 @@ allplayers <- read.csv('../data/shots-data.csv', stringsAsFactors = FALSE, colCl
 ```
 
 
+
 ```{r}
-andre <- allplayers[allplayers$name=="Andre Iguodala",]
-draymond <- allplayers[allplayers$name == "Draymond Green",]
-kevin <- allplayers[allplayers$name == "Kevin Durant",]
-klay <- allplayers[allplayers$name == "Klay Thompson",]
-stephen <- allplayers[allplayers$name == "Stephen Curry",]
+twopointers <- allplayers[allplayers$shot_type == "2PT Field Goal", ]
+threepointers <- allplayers[allplayers$shot_type == "3PT Field Goal", ]
+#n() is the number of observations in the group
+
+twopointers %>%
+  group_by(name) %>%
+  summarise(total = n(),
+            made = sum(shot_made_flag=="shot yes")) %>%
+  mutate(perc_made = made/total) %>%
+  arrange(desc(perc_made))
 ```
 
 ```{r}
-twopointers <- allplayers[allplayers$shot_type=="2PT Field Goal", ]
-threepointers <- allplayers[allplayers$shot_type=="3PT Field Goal", ]
-
-twopointnames <- group_by(twopointers, name)
-
-total <- length(allplayers$shot_made_flag)
-
-summarise(twopointnames, total)
-
-
-
+threepointers %>%
+  group_by(name) %>%
+  summarise(total = n(),
+            made = sum(shot_made_flag=="shot yes")) %>%
+  mutate(perc_made = made/total) %>%
+  arrange(desc(perc_made))
 
 ```
 
 ```{r}
-
+allplayers %>%
+  group_by(name) %>%
+  summarise(total = n(),
+            made = sum(shot_made_flag=="shot yes")) %>%
+  mutate(perc_made = made/total) %>%
+  arrange(desc(perc_made))
 ```
 

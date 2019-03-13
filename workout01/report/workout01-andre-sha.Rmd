@@ -1,0 +1,55 @@
+---
+title: "workout01-andre-sha"
+author: "Andre Sha"
+date: "3/11/2019"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(grid)
+library(jpeg)
+library(tidyr)
+```
+
+```{r}
+data_types = c("team_name"="character", "game_date"="character", "season" = "integer", "period"="integer",
+               "minutes_remaining"="integer", "seconds_remaining"="integer", "shot_made_flag"="character",
+               "action_type"="factor", "shot_type"="factor", "shot_distance"="integer", "opponent"="character",
+               "x"="integer", "y"="integer")
+allplayers <- read.csv('../data/shots-data.csv', stringsAsFactors = FALSE, colClasses = data_types)
+```
+
+
+```{r}
+andre <- allplayers[allplayers$name=="Andre Iguodala",]
+draymond <- allplayers[allplayers$name == "Draymond Green",]
+kevin <- allplayers[allplayers$name == "Kevin Durant",]
+klay <- allplayers[allplayers$name == "Klay Thompson",]
+stephen <- allplayers[allplayers$name == "Stephen Curry",]
+```
+
+```{r}
+twopointers <- allplayers[allplayers$shot_type=="2PT Field Goal", ]
+threepointers <- allplayers[allplayers$shot_type=="3PT Field Goal", ]
+
+twopointnames <- group_by(twopointers, name)
+
+total <- length(allplayers$shot_made_flag)
+
+summarise(twopointnames, total)
+
+
+
+
+```
+
+```{r}
+
+```
+

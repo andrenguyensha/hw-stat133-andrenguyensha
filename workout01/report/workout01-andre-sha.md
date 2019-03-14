@@ -23,6 +23,7 @@ library(ggplot2)
 library(grid)
 library(jpeg)
 library(tidyr)
+library(knitr)
 ```
 
 ``` r
@@ -90,3 +91,20 @@ allplayers %>%
     ## 3 Klay Thompson   1220   575     0.471
     ## 4 Stephen Curry   1250   584     0.467
     ## 5 Draymond Green   578   245     0.424
+
+<img src="../images/gsw-shot-charts.png" width="80%" style="display: block; margin: auto;" />
+
+Introduction.
+=============
+
+Are you a fan of basketball? Are you a fan of data analyzing? If so, then you would love this workout! This project, coined as "Workout 01: GSW Shot Charts", is meant as an introduction to working with complex file structures. Through this project, I learned the basics of operating GitHub as well as manipulating data to create aesthetically pleasing visual aids for those interested in Basketball or sports analytics. This project also gave a hands-on experience with writing statistical reports and interpreting data charts.
+
+Motivation.
+===========
+
+As a student in Prof. Gaston Sanchez's Stat 133 course as well as a huge sports fan, I was really excited to work on this project. Although it took a really long time to compile everything together, it was well worth it. As a Bay Area native, I've been a huge fan of the Golden State Warriors ever since I was a young kid. I hope to have a future in either becoming a data scientist in tech or trying my shot (no pun intended) as a sports data analyst for ESPN, the NHL (National Hockey League), and the NFL.
+
+Background.
+===========
+
+<img src="../images/gsw-team-photo.jpg" width="80%" style="display: block; margin: auto;" /> The Golden State Warriors are a professional basketball franchise based in Oakland, California. GSW saw itself rise in massive popularity or infamy amongst basketball fans during the Steve Kerr era from 2014-present, in which head coach Steve Kerr led the Warriors to championship wins in 2014-15, 2016-17, and 2017-2018.

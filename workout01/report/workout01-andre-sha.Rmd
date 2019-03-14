@@ -63,17 +63,73 @@ allplayers %>%
 knitr::include_graphics('../images/gsw-shot-charts.png')
 ```
 
-#Introduction.
-Are you a fan of basketball? Are you a fan of data analyzing? If so, then you would love this workout! This project, coined as "Workout 01: GSW Shot Charts", is meant as an introduction to working with complex file structures. Through this project, I learned the basics of operating GitHub as well as manipulating data to create aesthetically pleasing visual aids for those interested in Basketball or sports analytics. This project also gave a hands-on experience with writing statistical reports and interpreting data charts. 
+#Introduction
+Are you a fan of basketball? Are you a fan of data analyzing? If so, then you would love this workout! This project, coined as "Workout 01: GSW Shot Charts", is meant as an introduction to working with complex file structures. Through this project, I learned the basics of operating GitHub as well as manipulating data to create aesthetically pleasing visual aids for those interested in Basketball or sports analytics. The workout made use of several packages introduced throughout the course, including dplyr, ggplot2, knitr, and jpeg. This project also gave a hands-on experience with writing statistical reports and interpreting data charts. 
 
-#Motivation.
-As a student in Prof. Gaston Sanchez's Stat 133 course as well as a huge sports fan, I was really excited to work on this project. Although it took a really long time to compile everything together, it was well worth it. As a Bay Area native, I've been a huge fan of the Golden State Warriors ever since I was a young kid. I hope to have a future in either becoming a data scientist in tech or trying my shot (no pun intended) as a sports data analyst for ESPN, the NHL (National Hockey League), and the NFL. 
+#Motivation
+As a student in Prof. Gaston Sanchez's Stat 133 course as well as a huge sports fan, I was really excited to work on this project. Although it took a really long time to compile everything together, it was well worth it. I am extremely passionate about both sports and making use of data. They both are just two entertaining subjects that I see myself doing as a job in the future. As a Bay Area native, I've been a huge fan of the Golden State Warriors ever since I was a young kid. I hope to have a promising career in either becoming a data scientist in tech or trying my shot (no pun intended) as a sports data analyst for ESPN, the NHL (National Hockey League), and the NFL. 
 
 
-#Background. 
+#Background 
 ```{r out.width = '80%', echo = FALSE, fig.align = 'center'}
 knitr::include_graphics('../images/gsw-team-photo.jpg')
 ```
-The Golden State Warriors are a professional basketball franchise based in Oakland, California. GSW saw itself rise in massive popularity or infamy amongst basketball fans during the Steve Kerr era from 2014-present, in which head coach Steve Kerr led the Warriors to championship wins in 2014-15, 2016-17, and 2017-2018. 
+The Golden State Warriors are a professional basketball franchise based in Oakland, California. GSW saw itself rise in massive popularity or infamy (depending on how you look at it) amongst basketball fans during the Steve Kerr era from 2014-present, in which head coach Steve Kerr led the Warriors to championship wins in 2014-15, 2016-17, and 2017-2018. Winning 73 games during the 2016-2017, this project analyzes and interprets the performance of the Golden State Warriors' five star players: Klay Thompson, Kevin Durant, Stephen Curry, Draymond Green, and Andre Iguodala.
+
+#Data
+
+All the data collected for this report was obtained from Professor Gaston Sanchez's Stats 133 Github. The data contains detailed information of each point got by each of the five players  (Andew Iguodala, Draymond Green, Kevin Durant, Klay Thompson and Stephen Curry), recording the year of the season, the date of game, the opponent, the manuever/shot, whether or not the shot was made, shot type, and shot distance in terms of x and y coordinates (in inches). Based on these data points, we were able to do various data manipulation techniques to better visualize the data and interpret our findings of the five star GSW players.
+
+##Data Manipulation
+
+There were three parts for manipulating our data. Each will be described in detail below.
+
+-  The "Make Shots" Data Script
+
+The "Make Shots" Data Script was our preliminary step towards creating the five players' shot charts. 
+
+1. There were five seperate raw data .csv files about the players were imported onto R. To better manage the variables, I added the name of each player. 
+2. For clarity, "n" was changed into "shot no" and "y" was changed into "shot yes" within the column "shot_made_flag".
+3. A new column named "minutes" was added, which indicated the specific time during the game in which the shot was made. To calculate every datapoint in "minutes", I multiplied the variable "period" by 12 and subtracted "minutes_remaining" column datapoints.
+4. Summaries of each players were separated saved into a .txt file in our output folder, to look at during the data analysis stage.
+5. The five data frames were bound to one data frame, which will aid in our next part.
+
+- Creating Shot Charts for Each Player
+
+During this process, shot charts were created to visualize whether or not a shot was made at a specific location. The image of one side of the basketball court was used as the backdrop for this chart so that the specific data points can be visualized with more clarity. At the end, we faceted the charts into one .png for easy comparison amongst the five.
+
+- Two-Pointers, Three-Pointers, and Effective Shooting Percentage. 
+
+Grouping by name, we were able to create three tables that list the number of two-pointers and three pointers made by the star players. Using that, we were able to find two-point percentages, three-point percentages, and overall shooting percentage. 
+
+#Data Analysis. 
+
+Looking at the shot chart of the players, we can make a couple of very informative observations. While KD and Klay Thompson go for shots between the three-point and free throw line, Andre Iguodala and Draymond Green like to attempt more shots at the three-point line or near the rim. Stephen Curry, well known as the best Golden State Warrior player and his three point successes, like to shoot around the three-point line. 
+
+As he is more well known as a shooting guard, Andre Iguodala shot the least baskets amongst the players. He is also a side shooter, with more successes about the sides of the three-point line. He is also very good at banking two-pointers. 
+
+Draymond Green seems to make the least amount of three point shots as seen by the chart, which is very red saturated around the three point line. 
+
+As a power forward, Kevin Durant was able to make use of his positions, being extremely accurate in his two-pointers. 
+
+Klay Thompson is well received as an all around player and the shot chart clearly recognizes this with his chart filled up with lots of green amongst the three point area and some near the free-throw line. He is also a very great three point shooter, and was able to beat off his "Splash Brother" Steph in 2016 during the three-point contest.
+
+Stephen Curry, arguably one of the best athletes in his era, was able to show off his  three-points successes. One thing to note is that he covered more of the shooting area than the others, showing his versitility as a quick thinker and accurate shooter. It was no surprise that he came in first for the three point shooting contest in 2015 and second in 2016, coming behind his teammate Klay. 
+
+Now looking at the tables, we see that the two-point percentages are all above 45%, which put the five GSW star players at the highest tier of the NBA. From the first table we see that Iguodala had the highest percentage of two-pointers, but we noted previously that he made the least amount of shots, which makes sense when we double check our calculations. While Klay and KD shot almost the same amount of two-pointers, we see that KD shined most with an ~60% accuracy. Stephen Curry, although the MVP of the team, made about 54% of his shots because he was known for being a strategist, and may have hesitated during some of his attempts. He compensates for this with his three point percentage, though.
+
+As for three-pointers, the top players all made at least 30% of their shots for the season, which is incredible. To put this into perspective, the NBA three point line is a whopping 23'9'' from the center of the basket! The table puts Klay and Steph at the top, which makes sense because 2016 was the year they both shined the brightest. Draymond fell behind the most in the three-pointer game, but it makes sense because he's more well-received as a defensive player.
+
+Finally looking at total effective shooting percentages, all were above 40%, which is a benchmark that sets them apart from most other NBA starting players. Although it was KD's first year with the Golden State Warriors, he was able to keep his OKC fame by having a whopping 54% accuracy. In just one year, KD was able to efficiently work with the rest of the GSW veterans. They make a fantastic squad, and their team synergy allowed them to snag the 2016-2017 championship. 
+
+
+#Conclusion
+
+By looking at the shot charts and the table, we were able to visualize the Golden State Warriors star players' accuracies in their shots. Steph and Klay made the most shots, which is why they were known as the "Splash Brothers" by all basketball fans everywhere. They are arguably the best shooters in NBA history. With the combination of former OKC powerhouse KD, as well as excellent backups Iguodala and Draymond Green, the GSW were unstoppable during 2016-2017 and during future seasons. If we were to continue or redo this project, I would most likely also look at passing percentages as well as free throw percentages, as this would also gauge how well the five players play. 
+
+
+
+
+
 
 

@@ -1,0 +1,97 @@
+---
+title: "An Introduction to the Binomial Distribution"
+author: "Andre N. Sha"
+date: "r Sys.Date()"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{An Introduction to the Binomial Distribution}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(binomial)
+library(ggplot2)
+```
+
+## Binomial
+
+The package `"binomial"` allows the user to experiment with various basic binomial calculations and create binomial distribution plots.
+
+## Different Functions in "binomial"
+
+There are many different functions in the `"binomial"` package. They include bin_choose, bin_probability, bin_distribution, bin_cumulative, and bin_variable.
+
+bin_choose and bin_probability use 'n' trials and 'k' successes as their parameters, and their output calculates the binomial coefficient of a given binomial distribution, and the probability of success in their trials respectively. bin_probability also requires you to input the probability of the event.  
+
+bin_distribution calculates a binomial distribution table, returning a data frame and plotting it.
+
+bin_cumulative calculates the cumulative probability.
+
+bin_variable is a function that returns a list of named elements 'trials' and 'prob'
+trials and probability.
+
+
+## Step 1. Creating a "bin_var"
+
+The first step is to create a `"bin_var"` object with the function `bin_variable()` which takes in two different arguments: `trials` and `prob`:
+
+```{r}
+bin_var <- bin_variable(trials = 40, prob = 0.5)
+print(bin_var)
+```
+
+In this example, `bin_var` thus follows the distribution Bin(40,.5).
+
+## Step 2. Summary statistics
+
+Now that we have `bin_var` object, we can find the full summary statistics of `bin_var`.
+
+```{r}
+summary(bin_var)
+```
+
+
+## Step 3. Individual Computations
+
+With this package, we can find the mean, variance, mode, skewness, and kurtosis of a given binomial distribution. The package also contains different functions that can can be used to compute each summary statistic individually. 
+
+```{r}
+bin_mean(trials = 40, prob = 0.5)
+bin_variance(trials = 40, prob = 0.5)
+bin_mode(trials = 40, prob = 0.5)
+bin_skewness(trials = 40, prob = 0.5)
+bin_kurtosis(trials = 40, prob = 0.5)
+```
+
+
+## Step 4. Building Tables and Making Plots
+
+As stated before, `bin_distribution()` creates tables of the given binomial probability distribution.
+
+```{r, fig.show='hold'}
+bin_dis <- bin_distribution(trials = 40, prob = 0.5)
+bin_dis
+```
+
+To visualize this, you can just use use the `plot()` function.
+
+```{r}
+plot(bin_dis)
+```
+
+You can also use `bin_cumulative()` to create a table of the cumulative binomial probability distribution.
+
+```{r, fig.show='hold'}
+bin_cum <- bin_cumulative(trials = 40, prob = 0.5)
+bin_cum
+```
+
+Just like the bin_distribution() function, you can visualize the probability distribution using the `plot()` function.
+
+```{r}
+plot(bin_cum)

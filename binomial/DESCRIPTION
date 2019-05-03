@@ -1,0 +1,13 @@
+Package: binomial
+Type: Package
+Title: This is a package that deals with the binomial distribution.
+Version: 0.1.0
+Author: Andre Sha
+Maintainer: The package maintainer <andrenguyensha@berkeley.edu>
+Description: There are several binomial functions that you can implement.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 6.1.1

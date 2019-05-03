@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 The Binomial Package
 --------------------
 
@@ -120,6 +119,3 @@ summary(bin_summary)
 #> - skewness: 0 
 #> - kurtosis: -0.1333333
 ```
-=======
-
->>>>>>> 5d61fe197bedd62a813603467d921b94245747db
